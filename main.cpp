@@ -10,6 +10,8 @@ int main() {
 
     initEngine(&program);
 
+    glEnable(GL_TEXTURE_2D);
+
     start(&vadim, &program, &student);
 
     return 0;

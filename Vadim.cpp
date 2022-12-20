@@ -19,8 +19,8 @@ Vadim initVadim() {
     vadim.textureUp.setSmooth(true);
     vadim.textureDown.setSmooth(true);
 
-    vadim.speed = 1000;
-    vadim.size = 170;
+    vadim.speed = 600;
+    vadim.size = 180;
     vadim.position.x = 300;
     vadim.position.y = 300;
     vadim.sprite.setTexture(vadim.textureRight);
@@ -41,8 +41,8 @@ Vadim initStudent() {
     student.textureUp.setSmooth(true);
     student.textureDown.setSmooth(true);
 
-    student.speed = 1000;
-    student.size = 170;
+    student.speed = 600;
+    student.size = 180;
     student.position.x = 900;
     student.position.y = 900;
     student.sprite.setTexture(student.textureRight);
@@ -52,7 +52,7 @@ Vadim initStudent() {
 
 #include "Engine.h"
 
-void moveRight(Vadim *vadim, Vadim *student) {
+void moveRight(Vadim *vadim, Vadim *student, float rast) {
     sf::Vector2f positionV;
     positionV.y = vadim->position.y - vadim->size;
     positionV.x = vadim->position.x - vadim->size;
@@ -61,15 +61,13 @@ void moveRight(Vadim *vadim, Vadim *student) {
     positionS.y = student->position.y - student->size;
     positionS.x = student->position.x - student->size;
 
-    float rast = sqrt((positionV.x - positionS.x) * (positionV.x - positionS.x) +
-                      (positionV.y - positionS.y) * (positionV.y - positionS.y));
-    if ((rast < vadim->size && positionV.x < positionS.x))
+     if ((rast <= vadim->size && positionV.x < positionS.x))
         vadim->moveRight = false;
     else
         vadim->moveRight = true;
 }
 
-void moveLeft(Vadim *vadim, Vadim *student) {
+void moveLeft(Vadim *vadim, Vadim *student, float rast) {
 
     sf::Vector2f positionV;
     positionV.y = vadim->position.y - vadim->size;
@@ -79,9 +77,7 @@ void moveLeft(Vadim *vadim, Vadim *student) {
     positionS.y = student->position.y - student->size;
     positionS.x = student->position.x - student->size;
 
-    float rast = sqrt((positionV.x - positionS.x) * (positionV.x - positionS.x) +
-                      (positionV.y - positionS.y) * (positionV.y - positionS.y));
-    if ((rast < vadim->size && positionV.x > positionS.x))
+    if ((rast <= vadim->size && positionV.x > positionS.x))
         vadim->moveLeft = false;
     else
         vadim->moveLeft = true;
@@ -95,7 +91,7 @@ void stopLeft(Vadim *vadim) {
     vadim->moveLeft = false;
 }
 
-void moveUp(Vadim *vadim, Vadim *student) {
+void moveUp(Vadim *vadim, Vadim *student, float rast) {
 
     sf::Vector2f positionV;
     positionV.y = vadim->position.y - vadim->size;
@@ -105,9 +101,7 @@ void moveUp(Vadim *vadim, Vadim *student) {
     positionS.y = student->position.y - student->size;
     positionS.x = student->position.x - student->size;
 
-    float rast = sqrt((positionV.x - positionS.x) * (positionV.x - positionS.x) +
-                      (positionV.y - positionS.y) * (positionV.y - positionS.y));
-    if ((rast < vadim->size && positionV.y > positionS.y))
+   if ((rast <= vadim->size && positionV.y > positionS.y))
         vadim->moveUp = false;
     else
         vadim->moveUp = true;
@@ -117,7 +111,7 @@ void stopUp(Vadim *vadim) {
     vadim->moveUp = false;
 }
 
-void moveDown(Vadim *vadim, Vadim *student) {
+void moveDown(Vadim *vadim, Vadim *student, float rast) {
 
     sf::Vector2f positionV;
     positionV.y = vadim->position.y - vadim->size;
@@ -127,9 +121,7 @@ void moveDown(Vadim *vadim, Vadim *student) {
     positionS.y = student->position.y - student->size;
     positionS.x = student->position.x - student->size;
 
-    float rast = sqrt((positionV.x - positionS.x) * (positionV.x - positionS.x) +
-                      (positionV.y - positionS.y) * (positionV.y - positionS.y));
-    if ((rast < vadim->size && positionV.y < positionS.y))
+    if ((rast <= vadim->size && positionV.y < positionS.y))
         vadim->moveDown = false;
     else
         vadim->moveDown = true;

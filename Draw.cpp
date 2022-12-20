@@ -14,5 +14,7 @@ void draw(Program *program, Vadim *vadim, Vadim *student) {
 
     program->Window.draw(student->sprite);
 
+//    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
     program->Window.display();
 }

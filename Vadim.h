@@ -32,9 +32,9 @@ Vadim initVadim();
 
 Vadim initStudent();
 
-void moveRight(Vadim *vadim);
+void moveRight(Vadim *vadim, Vadim *student);
 
-void moveLeft(Vadim *vadim);
+void moveLeft(Vadim *vadim, Vadim *student);
 
 void stopRight(Vadim *vadim);
 
@@ -42,11 +42,11 @@ void stopLeft(Vadim *vadim);
 
 void stopUp(Vadim *vadim);
 
-void moveUp(Vadim *vadim);
+void moveUp(Vadim *vadim, Vadim *student);
 
 void stopDown(Vadim *vadim);
 
-void moveDown(Vadim *vadim);
+void moveDown(Vadim *vadim, Vadim *student);
 
 void vadimUpdate(float time, Vadim *vadim, Vadim *student);
 

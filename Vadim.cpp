@@ -19,7 +19,7 @@ Vadim initVadim() {
     vadim.textureUp.setSmooth(true);
     vadim.textureDown.setSmooth(true);
 
-    vadim.speed = 300;
+    vadim.speed = 1000;
     vadim.size = 170;
     vadim.position.x = 300;
     vadim.position.y = 300;
@@ -41,7 +41,7 @@ Vadim initStudent() {
     student.textureUp.setSmooth(true);
     student.textureDown.setSmooth(true);
 
-    student.speed = 400;
+    student.speed = 1000;
     student.size = 170;
     student.position.x = 900;
     student.position.y = 900;
@@ -50,12 +50,41 @@ Vadim initStudent() {
     return student;
 }
 
-void moveRight(Vadim *vadim) {
-    vadim->moveRight = true;
+#include "Engine.h"
+
+void moveRight(Vadim *vadim, Vadim *student) {
+    sf::Vector2f positionV;
+    positionV.y = vadim->position.y - vadim->size;
+    positionV.x = vadim->position.x - vadim->size;
+
+    sf::Vector2f positionS;
+    positionS.y = student->position.y - student->size;
+    positionS.x = student->position.x - student->size;
+
+    float rast = sqrt((positionV.x - positionS.x) * (positionV.x - positionS.x) +
+                      (positionV.y - positionS.y) * (positionV.y - positionS.y));
+    if ((rast < vadim->size && positionV.x < positionS.x))
+        vadim->moveRight = false;
+    else
+        vadim->moveRight = true;
 }
 
-void moveLeft(Vadim *vadim) {
-    vadim->moveLeft = true;
+void moveLeft(Vadim *vadim, Vadim *student) {
+
+    sf::Vector2f positionV;
+    positionV.y = vadim->position.y - vadim->size;
+    positionV.x = vadim->position.x - vadim->size;
+
+    sf::Vector2f positionS;
+    positionS.y = student->position.y - student->size;
+    positionS.x = student->position.x - student->size;
+
+    float rast = sqrt((positionV.x - positionS.x) * (positionV.x - positionS.x) +
+                      (positionV.y - positionS.y) * (positionV.y - positionS.y));
+    if ((rast < vadim->size && positionV.x > positionS.x))
+        vadim->moveLeft = false;
+    else
+        vadim->moveLeft = true;
 }
 
 void stopRight(Vadim *vadim) {
@@ -66,21 +95,51 @@ void stopLeft(Vadim *vadim) {
     vadim->moveLeft = false;
 }
 
-void moveUp(Vadim *vadim) {
-    vadim->moveUp = true;
+void moveUp(Vadim *vadim, Vadim *student) {
+
+    sf::Vector2f positionV;
+    positionV.y = vadim->position.y - vadim->size;
+    positionV.x = vadim->position.x - vadim->size;
+
+    sf::Vector2f positionS;
+    positionS.y = student->position.y - student->size;
+    positionS.x = student->position.x - student->size;
+
+    float rast = sqrt((positionV.x - positionS.x) * (positionV.x - positionS.x) +
+                      (positionV.y - positionS.y) * (positionV.y - positionS.y));
+    if ((rast < vadim->size && positionV.y > positionS.y))
+        vadim->moveUp = false;
+    else
+        vadim->moveUp = true;
 }
 
 void stopUp(Vadim *vadim) {
     vadim->moveUp = false;
 }
 
-void moveDown(Vadim *vadim) {
-    vadim->moveDown = true;
+void moveDown(Vadim *vadim, Vadim *student) {
+
+    sf::Vector2f positionV;
+    positionV.y = vadim->position.y - vadim->size;
+    positionV.x = vadim->position.x - vadim->size;
+
+    sf::Vector2f positionS;
+    positionS.y = student->position.y - student->size;
+    positionS.x = student->position.x - student->size;
+
+    float rast = sqrt((positionV.x - positionS.x) * (positionV.x - positionS.x) +
+                      (positionV.y - positionS.y) * (positionV.y - positionS.y));
+    if ((rast < vadim->size && positionV.y < positionS.y))
+        vadim->moveDown = false;
+    else
+        vadim->moveDown = true;
 }
 
 void stopDown(Vadim *vadim) {
+
     vadim->moveDown = false;
 }
+
 
 void vadimUpdate(float time, Vadim *vadim, Vadim *student) {
 
@@ -100,6 +159,7 @@ void vadimUpdate(float time, Vadim *vadim, Vadim *student) {
     if (vadim->moveRight && vadim->position.x < sf::VideoMode::getDesktopMode().width) {
         vadim->position.x += vadim->speed * time;
         vadim->sprite.setTexture(vadim->textureRight);
+
     } else if (vadim->moveLeft && vadim->position.x > vadim->size) {
         vadim->position.x -= vadim->speed * time;
         vadim->sprite.setTexture(vadim->textureLeft);

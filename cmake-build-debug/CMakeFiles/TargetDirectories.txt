@@ -1,3 +1,3 @@
-/home/nikita/DATA/Documents/BSUIR/OAIP/GUISML/cmake-build-debug/CMakeFiles/start.dir
-/home/nikita/DATA/Documents/BSUIR/OAIP/GUISML/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/nikita/DATA/Documents/BSUIR/OAIP/GUISML/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/nikita/Documents/CPP/THEGame2/cmake-build-debug/CMakeFiles/start.dir
+/home/nikita/Documents/CPP/THEGame2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/nikita/Documents/CPP/THEGame2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

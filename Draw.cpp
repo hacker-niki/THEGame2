@@ -9,7 +9,6 @@ void draw(Program *program, Vadim *vadim, Vadim *student) {
 
 //    program->Window.draw(program->BackSprite);
 
-    drawMap(program);
 
     program->Window.draw(vadim->sprite);
 

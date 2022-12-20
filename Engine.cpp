@@ -12,8 +12,6 @@ void initEngine(Program *program) {
                            "Vadim game",
                            sf::Style::Fullscreen);
     program->BackSprite.setColor(sf::Color(0, 0, 255, 100));
-    gameMap gMap;
-    initMap(&gMap);
 }
 
 void start(Vadim *vadim, Program *program, Vadim *student) {

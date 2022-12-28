@@ -23,13 +23,15 @@ void initEngine(Program *program) {
 //    glEnable(GL_TEXTURE_2D);
 }
 
-void start(Vadim *vadim, Program *program, Vadim *student) {
+void start(Vadim *vadim, Program *program, Vadim *student, Dot *dot) {
     sf::Clock clock;
+    sf::Vector2i Display(sf::VideoMode::getDesktopMode().width, sf::VideoMode::getDesktopMode().height);
+
     while (program->Window.isOpen()) {
         sf::Time dt = clock.restart();
         float time = dt.asSeconds();
         input(vadim, program, student);
-        update(time, vadim, student);
-        draw(program, vadim, student);
+        update(time, vadim, student, Display, dot);
+        draw(program, vadim, student, dot);
     }
 }

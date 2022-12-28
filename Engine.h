@@ -1,11 +1,11 @@
-//
-// Created by nikita on 12/2/22.
-//
 #pragma once
 
 #include "SFML/Graphics.hpp"
 #include "SFML/OpenGL.hpp"
 #include "Vadim.h"
+#include "cmath"
+#include "Dot.h"
+
 
 struct Program {
     sf::RenderWindow Window;
@@ -18,10 +18,10 @@ struct Program {
 
 void input(Vadim *vadim, Program *program, Vadim *student);
 
-void update(float time, Vadim *vadim, Vadim *student);
+void update(float time, Vadim *vadim, Vadim *student, sf::Vector2i Display, Dot *dot);
 
-void draw(Program *program, Vadim *vadim, Vadim *student);
+void draw(Program *program, Vadim *vadim, Vadim *student, Dot *dot);
 
-void start(Vadim *vadim, Program *program, Vadim *student);
+void start(Vadim *vadim, Program *program, Vadim *student, Dot *dot);
 
 void initEngine(Program *program);

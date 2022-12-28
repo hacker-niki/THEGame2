@@ -1,6 +1,3 @@
-//
-// Created by nikita on 12/1/22.
-//
 #pragma once
 
 #include "SFML/Graphics.hpp"
@@ -21,7 +18,11 @@ struct Vadim {
     float speed;
     float size;
 
+    int counter;
+
     bool mudIsOk;
+    bool otchislen = true;
+
     bool moveLeft = false;
     bool moveRight = false;
     bool moveDown = false;
@@ -48,7 +49,7 @@ void stopDown(Vadim *vadim);
 
 void moveDown(Vadim *vadim, Vadim *student, float rast);
 
-void vadimUpdate(float time, Vadim *vadim, Vadim *student);
+void vadimUpdate(float time, Vadim *vadim, Vadim *student, sf::Vector2i Display);
 
 void studentUpdate(float time, Vadim *vadim);
 

@@ -17,7 +17,7 @@ Vadim initVadim() {
 
     vadim.counter = 0;
     vadim.speed = 10;
-    vadim.size = 85;
+    vadim.size = 80;
     vadim.position.x = 300;
     vadim.position.y = 300;
     vadim.sprite.setTexture(vadim.textureRight);
@@ -38,8 +38,9 @@ Vadim initStudent() {
     student.textureUp.setSmooth(true);
     student.textureDown.setSmooth(true);
 
+    student.counter = 0;
     student.speed = 10;
-    student.size = 85;
+    student.size = 80;
     student.position.x = 900;
     student.position.y = 900;
     student.sprite.setTexture(student.textureRight);

@@ -5,7 +5,7 @@
 #include "Vadim.h"
 #include "cmath"
 #include "Dot.h"
-
+#include "TextView.h"
 
 struct Program {
     sf::RenderWindow Window;
@@ -18,10 +18,10 @@ struct Program {
 
 void input(Vadim *vadim, Program *program, Vadim *student);
 
-void update(float time, Vadim *vadim, Vadim *student, sf::Vector2i Display, Dot *dot);
+void update(Program *program, float time, Vadim *vadim, Vadim *student, sf::Vector2i Display, Dot *dot, TextView *player1_score, TextView *player2_score);
 
 void draw(Program *program, Vadim *vadim, Vadim *student, Dot *dot);
 
-void start(Vadim *vadim, Program *program, Vadim *student, Dot *dot);
+void start(Vadim *vadim, Program *program, Vadim *student, Dot *dot, TextView *player1_score, TextView *player2_score);
 
 void initEngine(Program *program);

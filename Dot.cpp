@@ -16,6 +16,7 @@ void initDot(Dot *dot, int height, int width) {
     dot->position = randomPosition(dot, height, width);
     dot->sprite.setPosition(dot->position);
     dot->sprite.setTexture(dot->texture);
+    dot->sprite.setColor(sf::Color(251, 133, 0, 255));
 }
 
 void dotUpdate(Dot *dot, int height, int width, Vadim *vadim) {

@@ -4,7 +4,7 @@
 void update(Program *program, float time, Vadim *vadim, Vadim *student, sf::Vector2i Display, Dot *dot,
             TextView *player1_score, TextView *player2_score) {
 
-    program->Window.clear(sf::Color::White);
+    program->Window.clear(sf::Color(142, 202, 230, 255));
 
     vadimUpdate(time, vadim, student, Display);
     program->Window.draw(vadim->sprite);

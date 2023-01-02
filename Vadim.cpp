@@ -21,30 +21,29 @@ Vadim initVadim() {
     vadim.position.x = 300;
     vadim.position.y = 300;
     vadim.sprite.setTexture(vadim.textureRight);
-
+    vadim.sprite.setColor(sf::Color(255, 183, 3, 255));
     return vadim;
 }
 
 Vadim initStudent() {
     Vadim student;
 
-    student.textureRight.loadFromFile("images/roundg.png");
-    student.textureLeft.loadFromFile("images/roundg.png");
-    student.textureUp.loadFromFile("images/roundg.png");
-    student.textureDown.loadFromFile("images/roundg.png");
+    student.textureRight.loadFromFile("images/round.png");
+    student.textureLeft.loadFromFile("images/round.png");
+    student.textureUp.loadFromFile("images/round.png");
+    student.textureDown.loadFromFile("images/round.png");
 
     student.textureRight.setSmooth(true);
     student.textureLeft.setSmooth(true);
     student.textureUp.setSmooth(true);
     student.textureDown.setSmooth(true);
-
     student.counter = 0;
     student.speed = 10;
     student.size = 80;
     student.position.x = 900;
     student.position.y = 900;
     student.sprite.setTexture(student.textureRight);
-
+    student.sprite.setColor(sf::Color(33, 158, 188, 255));
     return student;
 }
 

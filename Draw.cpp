@@ -2,7 +2,7 @@
 
 void draw(Program *program, Vadim *vadim, Vadim *student, Dot *dot) {
 
-    program->Window.clear(sf::Color::White);
+    program->Window.clear(sf::Color(142, 202, 230, 255));
 
 //    program->Window.draw(program->BackSprite);
 

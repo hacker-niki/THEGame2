@@ -1,5 +1,0 @@
-/home/nikita/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/223.7571.171/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/nikita/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/223.7571.171/bin/ninja/linux/ninja --profiling-format=google-trace --profiling-output=CMakeFiles\clion-event-trace.json -G Ninja -S /home/nikita/DATA/Documents/BSUIR/OAIP/GUISML -B /home/nikita/DATA/Documents/BSUIR/OAIP/GUISML/cmake-build-debug-event-trace
--- Found SFML 2.5.1 in /usr/lib/x86_64-linux-gnu/cmake/SFML
--- Configuring done
--- Generating done
--- Build files have been written to: /home/nikita/DATA/Documents/BSUIR/OAIP/GUISML/cmake-build-debug-event-trace

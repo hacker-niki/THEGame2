@@ -1,3 +1,0 @@
-/home/nikita/DATA/Documents/BSUIR/OAIP/GUISML/cmake-build-debug-event-trace/CMakeFiles/start.dir
-/home/nikita/DATA/Documents/BSUIR/OAIP/GUISML/cmake-build-debug-event-trace/CMakeFiles/edit_cache.dir
-/home/nikita/DATA/Documents/BSUIR/OAIP/GUISML/cmake-build-debug-event-trace/CMakeFiles/rebuild_cache.dir

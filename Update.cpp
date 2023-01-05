@@ -2,7 +2,7 @@
 #include "Vadim.h"
 
 void update(Program *program, float time, Vadim *vadim, Vadim *student, sf::Vector2i Display, Dot *dot,
-            TextView *player1_score, TextView *player2_score) {
+            TextView *player1_score, TextView *player2_score, TextView *frames_per_second) {
 
     program->Window.clear(sf::Color(142, 202, 230, 255));
 
@@ -28,6 +28,8 @@ void update(Program *program, float time, Vadim *vadim, Vadim *student, sf::Vect
     program->Window.draw(player1_score->text);
 
     program->Window.draw(player2_score->text);
+
+    program->Window.draw(frames_per_second->text);
 
     program->Window.display();
 }

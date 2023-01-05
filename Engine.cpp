@@ -2,6 +2,7 @@
 // Created by nikita on 12/2/22.
 //
 
+#include <iostream>
 #include "Engine.h"
 
 void initEngine(Program *program) {
@@ -23,15 +24,24 @@ void initEngine(Program *program) {
 //    glEnable(GL_TEXTURE_2D);
 }
 
-void start(Vadim *vadim, Program *program, Vadim *student, Dot *dot, TextView *player1_score, TextView *player2_score) {
+void start(Vadim *vadim, Program *program, Vadim *student, Dot *dot, TextView *player1_score, TextView *player2_score,
+           TextView *frames_per_second) {
     sf::Clock clock;
+    sf::Time dt = clock.restart();
     sf::Vector2i Display(sf::VideoMode::getDesktopMode().width, sf::VideoMode::getDesktopMode().height);
-
+    int fps = 0;
     while (program->Window.isOpen()) {
-        sf::Time dt = clock.restart();
         float time = dt.asSeconds();
+//        std::cout << clock.getElapsedTime().asSeconds() << '\n';
+        fps++;
+        if (clock.getElapsedTime().asSeconds() >= 1) {
+            frames_per_second->info = "FPS: " + std::to_string(fps);
+            frames_per_second->text.setString(frames_per_second->info);
+            fps = 0;
+            clock.restart();
+        }
         input(vadim, program, student);
-        update(program, time, vadim, student, Display, dot, player1_score, player2_score);
+        update(program, time, vadim, student, Display, dot, player1_score, player2_score, frames_per_second);
 //        draw( vadim, student, dot);
     }
 }

@@ -28,7 +28,13 @@ int main() {
     player2_score_position.y = 20;
     initText(&player2_score, "0", player2_score_position);
 
-    start(&vadim, &program, &student, dot, &player1_score, &player2_score);
+    TextView frames_per_second;
+    sf::Vector2f frames_per_second_position;
+    frames_per_second_position.x = sf::VideoMode::getDesktopMode().width / 2 - 100;
+    frames_per_second_position.y = 20;
+    initText(&frames_per_second, "0", frames_per_second_position);
+
+    start(&vadim, &program, &student, dot, &player1_score, &player2_score, &frames_per_second);
 
     return 0;
 }

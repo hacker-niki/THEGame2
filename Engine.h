@@ -18,10 +18,10 @@ struct Program {
 
 void input(Vadim *vadim, Program *program, Vadim *student);
 
-void update(Program *program, float time, Vadim *vadim, Vadim *student, sf::Vector2i Display, Dot *dot, TextView *player1_score, TextView *player2_score);
+void update(Program *program, float time, Vadim *vadim, Vadim *student, sf::Vector2i Display, Dot *dot, TextView *player1_score, TextView *player2_score, TextView *frames_per_second);
 
 void draw(Program *program, Vadim *vadim, Vadim *student, Dot *dot);
 
-void start(Vadim *vadim, Program *program, Vadim *student, Dot *dot, TextView *player1_score, TextView *player2_score);
+void start(Vadim *vadim, Program *program, Vadim *student, Dot *dot, TextView *player1_score, TextView *player2_score, TextView *frames_per_second);
 
 void initEngine(Program *program);

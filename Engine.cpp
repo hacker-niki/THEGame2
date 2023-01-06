@@ -42,6 +42,42 @@ void start(Vadim *vadim, Program *program, Vadim *student, Dot *dot, TextView *p
         }
         input(vadim, program, student);
         update(program, time, vadim, student, Display, dot, player1_score, player2_score, frames_per_second);
+        if (player1_score->info == "Player1 score: 20" || player2_score->info == "Player2 score: 20") {
+            program->Window.close();
+            initEngine(program);
+            program->Window.clear(sf::Color::White);
+            sf::Vector2f resolution;
+            resolution.x = sf::VideoMode::getDesktopMode().width;
+            resolution.y = sf::VideoMode::getDesktopMode().height;
+            sf::ContextSettings settings;
+            settings.depthBits = 24;
+            settings.stencilBits = 8;
+            settings.antialiasingLevel = 4;
+            settings.majorVersion = 3;
+            settings.minorVersion = 0;
+            program->Window.create(sf::VideoMode(resolution.x, resolution.y),
+                                   "Vadim game",
+                                   sf::Style::Fullscreen,
+                                   settings);
+            TextView text;
+            sf::Vector2f position;
+            position.x = sf::VideoMode::getDesktopMode().width / 2 - 100;
+            position.y = sf::VideoMode::getDesktopMode().height / 2;
+            if (player1_score->info == "Player1 score: 20")
+                initText(&text, "Player1 wins", position);
+            else
+                initText(&text, "Player2 wins", position);
+            text.text.setColor(sf::Color::White);
+            program->Window.draw(text.text);
+            program->Window.display();
+            while (true) {
+                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+                    program->Window.close();
+                    break;
+                }
+            }
+            exit(0);
+        }
 //        draw( vadim, student, dot);
     }
 }
